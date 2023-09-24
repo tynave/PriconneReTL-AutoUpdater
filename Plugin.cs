@@ -40,8 +40,6 @@ class EntrypointPatcher : BasePatcher
                 return;
             }
 
-            Logger.LogInfo($"Arguments: {priconnePath}, {localVersion}, {latestVersion} {assetLink}");
-
             int versioncompare = localVersion.CompareTo(latestVersion);
 
             if (versioncompare == 0)
@@ -129,6 +127,7 @@ class EntrypointPatcher : BasePatcher
                     string version = releaseJson.tag_name;
                     string assetLink = releaseJson.assets[0].browser_download_url;
                     Logger.LogInfo($"Latest Release Version: {version}");
+                    Logger.LogInfo($"Link to compressed asset files: {assetLink}");
                     return (latestVersion: version, latestVersionValid: true, assetLink: assetLink);
                 }
                 else
