@@ -9,6 +9,7 @@ using Newtonsoft.Json;
 using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
+using System.Text.RegularExpressions;
 
 namespace PriconneReTLAutoUpdater;
 
@@ -61,7 +62,7 @@ class EntrypointPatcher : BasePatcher
                 StartInfo = startInfo
             };
 
-            Logger.LogInfo("New version found! Starting PriconneReTLAutoUpdaterApp..");
+            Logger.LogWarning("New version found! Starting PriconneReTLAutoUpdaterApp..");
 
             process.Start();
             process.WaitForExit();
@@ -88,14 +89,14 @@ class EntrypointPatcher : BasePatcher
                 return (localVersion: null, localVersionValid = false);
             }
             string rawVersionFile = File.ReadAllText(versionFilePath);
-            localVersion = System.Text.RegularExpressions.Regex.Match(rawVersionFile, @"\d{8}[a-z]?").Value;
+            Match match = Regex.Match(rawVersionFile, @"\d{8}[a-z]?");
 
-            if (localVersion == "")
+            if (match == null || !match.Success)
             {
                 Logger.LogError("Version string does not match regex pattern!");
                 return (localVersion: null, localVersionValid: false);
             }
-
+            localVersion = match.Value;
             Logger.LogInfo($"Local Version: {localVersion}");
             return (localVersion, localVersionValid: true);
 
