@@ -24,13 +24,14 @@ class EntrypointPatcher : BasePatcher
     private string latestVersion;
     private bool latestVersionValid;
 
-    internal static new ManualLogSource Logger;
+    internal static ManualLogSource Logger;
     public override void Initialize() 
     {
         EntrypointPatcher.Logger = base.Log;
 
         try
         {
+
             priconnePath = Paths.GameRootPath;
             (localVersion, localVersionValid) = GetLocalVersion();
             (latestVersion, latestVersionValid, assetLink) = GetLatestRelease();
