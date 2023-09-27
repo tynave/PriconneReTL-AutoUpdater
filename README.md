@@ -10,9 +10,10 @@ Coming soon!
 
 ## Requirements / Dependencies
 - [PriconneRe-TL](https://github.com/ImaterialC/PriconneRe-TL) english patch.  
-(It can only update existing patch installations, it cannot do a fresh install automatically.)
-- [PriconneReTLAutoUpdaterApp]  
-The plugin is only an assembly that calls upon the PriconneReTLAutoUpdaterApp application to perform the update operation.
+The autoupdater can only update existing patch installations, it cannot do a fresh install automatically.
+- [PriconneReTLAutoUpdaterApp](https://github.com/tynave/PriconneReTL-AutoUpdaterApp)  
+The plugin is only responsible for checking the currently installed and the latest available versions.
+The actual update operation is perfomed by the application.
 
 ## Disclaimer
 Use at your own risk.  
