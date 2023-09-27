@@ -3,7 +3,9 @@ A [preloader patcher](https://docs.bepinex.dev/master/articles/dev_guide/preload
 
 ## Installation
 ### Manual
-Extract the files found in the release archive to the `priconner` folder (keep the folder structure in the archive!)
+Extract the files found in the release archive to the `priconner` folder (keep the folder structure in the archive!)  
+(The goal is to have the patcher dll from this release, and the files of the [PriconneReTLAutoUpdaterApp](https://github.com/tynave/PriconneReTL-AutoUpdaterApp) together inside the `BepInEx\patchers` folder.  
+They can be directly in the root of the `patchers` folder, or in any subfolder, just have them "beside" each other. But if you just extract the release archive as-is into the `priconner` folder, you should be good.)
 
 ### Automated
 Coming soon!
