@@ -55,7 +55,7 @@ class EntrypointPatcher : BasePatcher
             ProcessStartInfo startInfo = new ProcessStartInfo
             {
                 FileName = exePath,
-                Arguments = $"{priconnePath} {localVersion} {latestVersion} {assetLink}"
+                Arguments = $"\"{priconnePath}\" {localVersion} {latestVersion} \"{assetLink}\""
             };
 
             Process process = new Process
