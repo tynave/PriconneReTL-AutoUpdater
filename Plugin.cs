@@ -13,7 +13,7 @@ using System.Text.RegularExpressions;
 
 namespace PriconneReTLAutoUpdater;
 
-[PatcherPluginInfo("PriconneReTLAutoUpdater", "PriconneReTLAutoUpdater by Farleena", "1.0.0")]
+[PatcherPluginInfo("PriconneReTLAutoUpdater", "PriconneReTLAutoUpdater by Farleena", "1.0.1")]
 class EntrypointPatcher : BasePatcher
 {
     private static string githubAPI = "https://api.github.com/repos/ImaterialC/PriconneRe-TL";
